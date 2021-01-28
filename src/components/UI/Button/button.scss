@@ -1,0 +1,18 @@
+.btn {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        top: calc(50% - 16px);
+        left: calc(50% - 8px);
+        border: 16px solid transparent;
+        border-left: 25px solid #000;
+    }
+}

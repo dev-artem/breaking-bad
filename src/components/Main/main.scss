@@ -1,0 +1,39 @@
+.main {
+    height: 100vh;
+    background: url('../../img/bg_header.jpg') center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__inner {
+        padding-top: 355px;
+    }
+
+    &__title {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 72px;
+        line-height: 88px;
+    }
+
+    &__desc {
+        margin-top: 30px;
+        max-width: 700px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    &__btn {
+        margin-top: 83px;
+        display: flex;
+        align-items: center;
+        max-width: 380px;
+        &-text {
+            margin-left: 30px;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 28px;
+            letter-spacing: 0.15em;
+        }
+    }
+}

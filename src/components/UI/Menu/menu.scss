@@ -1,0 +1,19 @@
+.menu {
+    min-width: 400px;
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        &-item {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 13px;
+            border-bottom: 2px solid transparent;
+            a {
+                padding: 10px;
+            }
+            &:hover {
+                border-bottom: 2px solid #000;
+            }
+        }
+    }
+}

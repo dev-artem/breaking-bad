@@ -1,12 +1,37 @@
 import React from 'react';
-import CharactersList from '../CharactersList';
+import { Switch, Route } from 'react-router-dom';
 
+import Characters from '../Characters';
+import Header from '../UI/Header';
+import Main from '../Main';
+import OnDev from '../OnDev';
 import './App.scss';
 
 function App() {
+    // TODO: Context
+    const [headerBgc, setHeaderBgc] = React.useState({
+        'background-color': '#f7e135',
+    });
     return (
         <div className="App">
-            <CharactersList />
+            <Header bgColor={headerBgc} />
+            <Switch>
+                <Route path="/" exact>
+                    <Main setBgc={setHeaderBgc} />
+                </Route>
+                <Route path="/about">
+                    <OnDev />
+                </Route>
+                <Route path="/characters">
+                    <Characters />
+                </Route>
+                <Route path="/episodes">
+                    <OnDev />
+                </Route>
+                <Route path="/order">
+                    <OnDev />
+                </Route>
+            </Switch>
         </div>
     );
 }

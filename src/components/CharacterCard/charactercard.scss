@@ -1,0 +1,25 @@
+.character-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    padding: 20px;
+    background-color: rgb(28, 44, 30);
+    color: #dbb11e;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    &__photo {
+        display: block;
+        margin: 0 auto;
+        width: 250px;
+        height: 320px;
+    }
+    &__name {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: 700;
+    }
+    &__nickname {
+        font-size: 18px;
+        font-weight: 400;
+    }
+}

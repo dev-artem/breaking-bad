@@ -1,0 +1,19 @@
+.on-dev {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__text {
+        color: #000;
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    &__spinner {
+        margin-top: 30px;
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+}
