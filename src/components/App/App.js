@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Characters from '../Characters';
 import Header from '../UI/Header';
 import Main from '../Main';
+import Episodes from '../Episodes';
 import OnDev from '../OnDev';
 import './App.scss';
 
@@ -26,7 +27,7 @@ function App() {
                     <Characters />
                 </Route>
                 <Route path="/episodes">
-                    <OnDev />
+                    <Episodes />
                 </Route>
                 <Route path="/order">
                     <OnDev />

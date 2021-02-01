@@ -39,8 +39,6 @@ const Characters = ({ characters, getList }) => {
     ))
     );
 
-
-    console.log();
     return (
         <section className="characters">
             <div className="container">
