@@ -10,7 +10,7 @@ import './App.scss';
 function App() {
     // TODO: Context
     const [headerBgc, setHeaderBgc] = React.useState({
-        'background-color': '#f7e135',
+        backgroundColor: '#f7e135',
     });
     return (
         <div className="App">

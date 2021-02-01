@@ -1,16 +1,19 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import ModalVideo from 'react-modal-video';
 
 import Button from '../UI/Button'
 
 import './main.scss';
-
+import '../../../node_modules/react-modal-video/scss/modal-video.scss';
 
 const Main = ({setBgc}) => {
 
-    React.useEffect(() => {
-        setBgc({"background-color": "transparent"})
+    const [isOpen, setIsOpen] = useState(false)
+
+    useEffect(() => {
+        setBgc({"backgroundColor": "transparent"})
         return () => {
-            setBgc({'background-color': '#f7e135'})
+            setBgc({'backgroundColor': '#f7e135'})
         }
     }, [setBgc]);
     
@@ -26,10 +29,11 @@ const Main = ({setBgc}) => {
                         control a tenuous empire. But uneasy lies the head that wears
                         the crown.
                     </div>
-                    <a href="#" className="main__btn">
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="HhesaQXLuRY" onClose={() => setIsOpen(false)} />
+                    <div onClick={()=> setIsOpen(true)} className="main__btn">
                         <Button />
                         <div className="main__btn-text">WATCH TRAILER</div>
-                    </a>
+                    </div>
                 </div>
             </div>
 
