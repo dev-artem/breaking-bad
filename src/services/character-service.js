@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-export default class characterService {
-    URL = 'https://www.breakingbadapi.com/api/';
-    getAllCharacters() {
-        return axios.get(`${this.URL}characters`).then((res) => res.data);
-    }
-}
+const _URL = 'https://www.breakingbadapi.com/api';
+
+const getAllCharacters = async () => {
+    return await axios.get(`${_URL}/characters`).then((res) => res.data);
+};
+
+export default getAllCharacters;

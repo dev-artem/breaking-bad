@@ -1,9 +1,9 @@
-import getCharactersList from './characters-actions';
-import getEpisodesList from './episodes-actions';
+import getCharacters from './characters-actions';
+import getEpisodes from './episodes-actions';
 
 const actions = {
-    getCharactersList,
-    getEpisodesList,
+    getCharacters,
+    getEpisodes,
 };
 
 export default actions;

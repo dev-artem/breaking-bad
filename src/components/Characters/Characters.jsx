@@ -3,23 +3,18 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import actions from '../../redux/actions';
 import CharacterCard from '../CharacterCard';
-import characterService from '../../services/character-service';
 import Spinner from '../UI/Spinner';
 import Search from '../UI/Search';
 
 import './characters.scss';
-const Characters = ({ characters, getList }) => {
+const Characters = ({ characters, getCharacters }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [filter, setFilter] = useState('');
     const [charactersList, setCharactersList] = useState(characters);
 
     useEffect(() => {
-        const service = new characterService();
-        service.getAllCharacters().then((res) => {
-            getList(res);
-            setIsLoading(false);
-        });
-    }, [getList]);
+        getCharacters().then(() => setIsLoading(false));
+    }, [getCharacters]);
 
     useEffect(() => {
         const filterCharacters = (filter) => {
@@ -59,9 +54,9 @@ const mapStateToProps = ({ charactersReducer }) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    const { getCharactersList } = bindActionCreators(actions, dispatch);
+    const { getCharacters } = bindActionCreators(actions, dispatch);
     return {
-        getList: getCharactersList,
+        getCharacters,
     };
 };
 

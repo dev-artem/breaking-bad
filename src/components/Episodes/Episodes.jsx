@@ -5,26 +5,19 @@ import Slider from 'react-slick'
 import actions from '../../redux/actions';
 import Spinner from '../UI/Spinner';
 import EpisodeCard from '../EpisodeCard';
-import episodesService from '../../services/episodes-service'
 
 import './episodes.scss'
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
-const Episodes = ({episodes, getList}) => {
+const Episodes = ({episodes, getEpisodes}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [season, setSeason] = useState(1);
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        const service = new episodesService();
-
-        service.getAllEpisodes().then((res) => {
-            getList(res);
-            setIsLoading(false);
-        });
-
-    }, [getList]);
+        getEpisodes().then(() => setIsLoading(false));
+    }, [getEpisodes]);
 
     useEffect(() => {
         const filtred = episodes.filter(item => parseInt(item.season) === season);
@@ -92,9 +85,9 @@ const mapStateToProps = ({ episodesReducer }) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    const { getEpisodesList } = bindActionCreators(actions, dispatch);
+    const { getEpisodes } = bindActionCreators(actions, dispatch);
     return {
-        getList: getEpisodesList,
+        getEpisodes,
     };
 };
 

@@ -1,10 +1,12 @@
+import { GET_CHARACTERS } from '../types';
+
 export const initialState = {
     characters: [],
 };
 
 export const charactersReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'GET_CHARACTERS': {
+        case GET_CHARACTERS: {
             return {
                 characters: action.payload,
             };

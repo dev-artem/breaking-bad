@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 
 import { store } from './redux/store';
-import App from './/components/App/App';
+import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
